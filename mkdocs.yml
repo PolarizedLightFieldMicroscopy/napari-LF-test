@@ -1,0 +1,11 @@
+site_name: napari-LF-test
+site_description: A temporary plugin to use with napari in the process of developing a light field imaging plugin
+site_author: Geneva Schlafly
+
+theme: readthedocs
+
+
+repo_url: https://github.com/PolarizedLightFieldMicroscopy/napari-LF-test
+
+pages:
+- Home: index.md
