@@ -23,7 +23,7 @@ def napari_experimental_provide_function():
     # we can return a single function
     # or a tuple of (function, magicgui_options)
     # or a list of multiple functions with or without options, as shown here:
-    return [threshold, image_arithmetic]
+    return [threshold, image_arithmetic, lf_Analyze]
 
 
 # 1.  First example, a simple function that thresholds an image and creates a labels layer
@@ -47,3 +47,14 @@ def image_arithmetic(
 ) -> "napari.types.LayerDataTuple":
     """Adds, subtracts, multiplies, or divides two same-shaped image layers."""
     return (operation.value(layerA, layerB), {"colormap": "turbo"})
+    
+
+class LFAnalyzeOperations(Enum):
+    calibrate = np.add
+    deconvolve = np.subtract
+
+def lf_Analyze(
+    LightField: "napari.types.Path", Raidometry: "napari.types.Path", DarkFrame: "napari.types.Path", operation: LFAnalyzeOperations
+) -> "napari.types.LayerDataTuple":
+    """Adds, subtracts, multiplies, or divides two same-shaped image layers."""
+    return (operation.value(LightField, Raidometry, DarkFrame), {"colormap": "turbo"})
