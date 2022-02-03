@@ -1,0 +1,51 @@
+name: napari-LF-test
+schema_version: 0.1.0
+contributions:
+  commands:
+  - id: napari-LF-test.ExampleQWidget
+    title: Create Example Q Widget
+    python_name: napari_lf_test._dock_widget:ExampleQWidget
+  - id: napari-LF-test.example_magic_widget
+    title: Create example_magic_widget
+    python_name: napari_lf_test._dock_widget:example_magic_widget
+  - id: napari-LF-test.threshold
+    title: Threshold an image and return a mask.
+    python_name: napari_lf_test._function:threshold
+  - id: napari-LF-test.image_arithmetic
+    title: Adds, subtracts, multiplies, or divides two same-shaped image layers.
+    python_name: napari_lf_test._function:image_arithmetic
+  - id: napari-LF-test.lf_Analyze
+    title: Adds, subtracts, multiplies, or divides two same-shaped image layers.
+    python_name: napari_lf_test._function:lf_Analyze
+  - id: napari-LF-test.get_reader
+    title: Get Reader
+    python_name: napari_lf_test._reader:napari_get_reader
+  - id: napari-LF-test.write_image
+    title: Write Image
+    python_name: napari_lf_test._writer:napari_write_image
+  readers:
+  - command: napari-LF-test.get_reader
+    filename_patterns:
+    - <EDIT_ME>
+    accepts_directories: true
+  writers:
+  - command: napari-LF-test.write_image
+    layer_types:
+    - image
+    filename_extensions:
+    - .<EDIT_ME>
+    display_name: image
+  widgets:
+  - command: napari-LF-test.ExampleQWidget
+    display_name: Example Q Widget
+  - command: napari-LF-test.example_magic_widget
+    display_name: example_magic_widget
+  - command: napari-LF-test.threshold
+    display_name: threshold
+    autogenerate: true
+  - command: napari-LF-test.image_arithmetic
+    display_name: image arithmetic
+    autogenerate: true
+  - command: napari-LF-test.lf_Analyze
+    display_name: lf Analyze
+    autogenerate: true
